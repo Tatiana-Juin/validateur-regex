@@ -48,7 +48,7 @@ h2{
     cursor:pointer;
 }
 
-.btn{
+.btn-tel-bibliotheque,.btn-email-bibliotheque,.btn-tel-test,.btn-email-test,.btn-effacer,.btn-copier{
     padding:10px;
     width:110px;
     font-size:13px;
