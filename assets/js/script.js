@@ -17,17 +17,14 @@ let textareaTest = document.querySelector(".test")
 let btnEffacer = document.querySelector(".btn-effacer");
 let btnCopier = document.querySelector(".btn-copier");
 
-// console.log( toggleBiblio)
-// console.log(hidenBiblio)
-// console.log(btnTelBiblio)
-// console.log(btnEmailBiblio)
-// console.log(btnLancer)
-// console.log(toggleScore)
-// console.log(pourcentage)
-// console.log(paraPourcentage)
-// console.log(inputRegex)
-// console.log(btnTelTest)
-// console.log(btnEmailTest)
-// console.log(textareaTest)
-// console.log(btnEffacer)
-// console.log(btnCopier)
+// Pour faire le toggle 
+toggleBiblio.addEventListener("click",() =>{
+    // on declare une variable et on ajoute une class qui est hiden 
+    
+    const isHiden = hidenBiblio.classList.toggle("hiden");
+    console.log(isHiden)
+//  si hiden est true donc il a disparu on change l'icon du bas 
+    toggleBiblio.classList.toggle("bi-arrow-down-short",isHiden)
+    // si false en haut
+    toggleBiblio.classList.toggle("bi-arrow-up-short",!isHiden)
+})

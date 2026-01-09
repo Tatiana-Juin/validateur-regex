@@ -43,7 +43,7 @@ h2{
     font-weight:600;
 }
 
-.bi-arrow-up-short{
+.bi{
     font-size:30px;
     cursor:pointer;
 }
@@ -58,6 +58,10 @@ h2{
     background-color: #F8FAFC;
     margin-left:20px;
 
+}
+/* Pour faire disparaitre les elements selectionner */
+.hiden {
+    display: none !important;
 }
 
 /* ****************TEST ET SCORE */
