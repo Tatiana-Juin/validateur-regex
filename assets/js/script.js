@@ -67,7 +67,12 @@ btnLancer.addEventListener("click",(e) =>{
    
 })
 
-// function pour les test 
+// function pour un test 
 function funcTest(regexValue){
+    
     console.log(regexValue)
+    // recuperation du test 
+    let testValue = textareaTest.value.trim()
+    
+    // console.log(testValue)
 }
