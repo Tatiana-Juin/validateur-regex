@@ -121,9 +121,12 @@ function funcTest(regexValue){
        
 
     });
-    // Pour calculer le score 
-  let scoreFinal = calculerScore(compteurReussi, compteurTest);
-  console.log(scoreFinal)
+    let detailTest = `${compteurReussi} / ${compteurTest}`
+    console.log(detailTest)
+        // Pour calculer le score 
+    let scoreFinal = calculerScore(compteurReussi, compteurTest);
+    console.log(scoreFinal)
+ 
     
     
 }
