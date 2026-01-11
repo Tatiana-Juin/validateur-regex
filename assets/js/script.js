@@ -16,6 +16,7 @@ let btnEmailTest = document.querySelector(".btn-email-test")
 let textareaTest = document.querySelector(".test")
 let btnEffacer = document.querySelector(".btn-effacer");
 let btnCopier = document.querySelector(".btn-copier");
+let erreur = document.querySelector(".erreur")
 
 // function pour les différents toogle 
 const funcToggle = (btn,content)=>{
@@ -42,7 +43,7 @@ toggleScore.addEventListener("click",()=>{
 btnLancer.addEventListener("click",(e) =>{
     e.preventDefault()
     // Selectionne le p pour afficher le message erreur 
-    let erreur = document.querySelector(".erreur")
+    
     // pour recuperer la valeur du texte 
    let regexValue = inputRegex.value.trim();
 //    pour verifier que le regex est bon on verifie les symbole 
@@ -70,23 +71,37 @@ btnLancer.addEventListener("click",(e) =>{
 // function pour un test 
 function funcTest(regexValue){
     
-    console.log(regexValue)
+    // console.log(regexValue)
     // recuperation du test 
     let testValue = textareaTest.value.trim()
     let lignes = testValue.split("\n");
+
     // on boucle sur lignes 
     lignes.forEach((ligne) => {
-        // verifie le KO et OK 
-        const analyse = ligne.match(/^(\[(?:OK|KO)\])\s*(.*)/i);
-        // Si analyse == true 
-        
-        if(analyse){
-            let indicateur = analyse[1].toUpperCase()
-            const text = analyse[2].trim()
-            // console.log("indicateur :",indicateur)
-            // console.log("text : ",text)
-            console.log(analyse.length)
+        // Il faut obligatoireemnt qu'il est un test pour que ca fonctionne
+
+        if(ligne==""){
+           erreur.textContent="Erreur tu dois saisir un test "
+           return erreur.style.color="red"
+        }else{
+             // verifie le KO et OK 
+            const analyse = ligne.match(/^(\[(?:OK|KO)\])\s*(.*)/i);
+            // Si analyse == true 
+            if(analyse){
+                // recuperer indicateur 
+                let indicateur = analyse[1].toUpperCase()
+                // recuperer le text du test 
+                const text = analyse[2].trim()
+                console.log("indicateur :",indicateur)
+                console.log("text : ",text)
+                
+            }else{
+                // s'il a une erreur consernant les test 
+                erreur.textContent="format invalide"
+                return erreur.style.color="red";
+            }
         }
+       
 
     });
     
