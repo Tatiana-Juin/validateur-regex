@@ -137,3 +137,10 @@ function calculerScore(succes,total){
     let resultat = (succes / total) *100
     return Math.round(resultat)
 }
+
+btnEffacer.addEventListener("click",() =>{
+  
+    inputRegex.value="";
+    textareaTest.value="";
+   
+})
