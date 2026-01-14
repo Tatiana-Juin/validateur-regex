@@ -42,38 +42,45 @@ toggleScore.addEventListener("click",()=>{
     funcToggle(toggleScore, pourcentage); 
 })
 
-
-function funcVerificationRegex(e){
-     e.preventDefault()
+// FONCTION POUR VALIDER LA STRUCTURE DES REGEX  
+function funcVerificationRegex(regexValue){
+     
     // Selectionne le p pour afficher le message erreur 
     
     // pour recuperer la valeur du texte 
-   let regexValue = inputRegex.value.trim();
+//    let regexValue = inputRegex.value.trim();
 //    pour verifier que le regex est bon on verifie les symbole 
     let symbolesRegex = /[\[\]\(\)\*\+\?\.\\\^\$\|\{\}]/;
 
    if(regexValue==""){
      erreur.textContent="Erreur tu dois saisir un regex "
-    return erreur.style.color="red";
+     erreur.style.color="red";
+     return false;
    }
-//    si il n'y a aucun symbole c'est du texte 
-   else if(!symbolesRegex.test(regexValue)) {
+    //  si il n'y a aucun symbole c'est du texte 
+    if(!symbolesRegex.test(regexValue)) {
     erreur.textContent="";
     erreur.textContent="Attention ceci a ressemble a du texte et pas à un regex"
-    return erreur.style.color="red";
+     erreur.style.color="red";
+     return false;
     
-   }else{
-
-    erreur.textContent="";
-    // appelle de la function pour faire les test
-    funcTest(regexValue)
    }
+   erreur.textContent="";
+    // appelle de la function pour faire les test
+    return true;
 }
 
-// Fonction pour verifier l'expression 
-btnLancer.addEventListener("click",funcVerificationRegex)
+// Pour lancer les test
+btnLancer.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let regexValue = inputRegex.value.trim();
+    if(funcVerificationRegex(regexValue)){
+        funcTest(regexValue)
+    }
+})
 
-// function pour un test 
+
+//FUNCTION POUR LES TEST
 function funcTest(regexValue){
     compteurTest = 0;
     compteurReussi = 0;
@@ -149,7 +156,7 @@ btnEffacer.addEventListener("click",() =>{
 })
 
 btnCopier.addEventListener("click",()=>{
-    let regexValue = inputRegex.value.trim();
+    // let regexValue = inputRegex.value.trim();
 
-    console.log(regexValue)
+    // console.log(regexValue)
 })
