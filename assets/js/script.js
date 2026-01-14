@@ -158,7 +158,23 @@ btnEffacer.addEventListener("click",() =>{
 btnCopier.addEventListener("click",()=>{
     let regexValue = inputRegex.value.trim();
     if(funcVerificationRegex(regexValue)){
-        console.log("reussi")
+        // console.log(regexValue)
+        funcCopier(regexValue);
+
     }
-    // console.log(regexValue)
+    
 })
+// FUNCTION POUR COPIER DANS LE PRESSE PAPIER LE REGEX
+function funcCopier(regexValue){
+    navigator.clipboard.writeText(regexValue)
+    .then( ()=>{
+        erreur.textContent="Le Regex à était copié ! ";
+        erreur.style.color="green";
+        setTimeout(() => {
+            erreur.textContent=""
+        }, 2000);
+    } )
+    .catch(err=>{
+        console.error("Erreur lors de la copie ",err)
+    })
+}
