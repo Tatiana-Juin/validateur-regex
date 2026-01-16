@@ -123,7 +123,7 @@ function funcTest(regexValue){
                 
             }else{
                 // s'il a une erreur consernant les test 
-                erreur.textContent="format invalide"
+                erreur.textContent="Format invalide - ton test doit commencer par [ok] ou [ko]"
                  erreur.style.color="red";
             }
         }
@@ -146,6 +146,7 @@ function calculerScore(succes,total){
     return Math.round(resultat)
 }
 
+// POUR EFFACER LE TEXTE 
 btnEffacer.addEventListener("click",() =>{
 
     inputRegex.value="";
