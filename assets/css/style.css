@@ -12,6 +12,8 @@ body{
 /* **************HEADER****************  */
 header{
     width:100vw;
+    width:100%;
+    /* border:1px solid blue; */
     margin: 20px 0 20px 0;
 }
 

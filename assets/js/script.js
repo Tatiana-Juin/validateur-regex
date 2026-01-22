@@ -179,7 +179,7 @@ btnCopier.addEventListener("click",()=>{
     
 })
 
-
+// FONCTION POUR LA BIBLIOTHEQUE DE REGEX 
 function regexBibliotheque(regex){
     inputRegex.value="";
     inputRegex.value = regex;
@@ -192,6 +192,28 @@ btnTelBiblio.addEventListener("click",() =>{
 })
 
 btnEmailBiblio.addEventListener("click",()=>{
-    regexBibliotheque("^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$");
+    regexBibliotheque("^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$");
+})
+// fonction pour ecrire des test
+function funcTestBiblio(valueTest){
+    const test = valueTest;
+    return textareaTest.value=test;
+}
+// Test pouir le bouton tel 
+btnTelTest.addEventListener("click",() =>{
+    // console.log(textareaTest)
+   funcTestBiblio(`[OK] 0612345678
+[OK] 0145879632
+[KO] 12345
+[KO] 06123abc78
+[KO] 0012345678`)
 })
 
+btnEmailTest.addEventListener("click",()=>{
+    funcTestBiblio(`[OK] contact@domaine.com
+[KO] email@domaine.c
+[OK] mon_email-123@web-site.org
+[KO] test.nom@sous.domaine.net
+[OK] email@domaine.longueextension
+`)
+})
