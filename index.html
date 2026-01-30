@@ -1,116 +1,172 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Verificateur de regex</title>
+    <title>Document</title>
 </head>
 <body>
-    
     <header>
-        <!-- titre de la page  -->
-        <h1>Validateur de regex </h1>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Regex<span>Validator</span>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    ☰
+                </div>
+                <ul class="nav-links" id="nav-list">
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#tag-system">Système de Tags</a></li>
+                    <li><a href="#how-it-works">Mode d'emploi</a></li>
+                    <li><a href="#" class="btn-cta">Lancer l'application</a></li>
+                    <li><a href="#" class="btn-cta">Lancer l'application</a></li>
+                </ul>
+
+            </nav>
+        </div>
     </header>
 
     <main>
-        <!-- Bibliotheque de code  -->
-         <div class="bibliotheque">
-            <!-- EN TETE DE BIBLIOTHEQUE DE CODE  -->
-            <div class="header-bibliotheque ">
-                <div class="div-title-header">
-                    <h2>Bibliotheque de regex  </h2>
-                </div>
-
-                <div class="div-icon-header">
-                    <i class="bi bi-arrow-up-short toggle-bibliotheque"></i>
-                </div>
-
+        <!--hERO DE LA PAGE  -->
+        <section class="hero">
+            <div class="container">
+                <h1>Validez vos Regex avec <br><span class="gradient-text">Précision Absolue</span></h1>
+                <p>
+                    L'outil de validation simple et moderne pour les développeurs. 
+                    Définissez vos attentes avec <code>[OK]</code> et <code>[KO]</code> pour garantir des expressions régulières sans erreur.
+                </p>
+                <a href="#" class="btn-cta" style="padding: 16px 32px; font-size: 1.1rem;">Commencer</a>
             </div>
-            <!-- POUR LES BOUTON   -->
-            <!-- <div> -->
-                <div class="hiden-bibliotheque">
-                    <button class="btn-tel-bibliotheque">Telephone</button>
-                    <button class="btn-email-bibliotheque">Email</button>
-                </div>
-            <!-- </div> -->
-         </div>
+        </section>
 
-         <div class="div-test-score">
-            <!-- regourpe le bouton lancer le score et score de test  -->
-            <div class="div-resultat">
-                <button id="btn-lancer" >Lancer le test </button>
-                
-                <div>
-                    <!-- Pour le titre qui est le score de precision et le logo  -->
-                    <div class="div-score">
-                        <!-- <div> -->
-                            <h2>Score de la précision</h2>
-                        <!-- </div> -->
-                        <!-- <div> -->
-                             <i class="bi bi-arrow-up-short toggle-score"></i>
-                        <!-- </div> -->
+        <!-- POURQUOI UTILISER VALIDATORREGEX -->
+        <section id="features" class="section-padding features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pourquoi utiliser RegexValidator ?</h2>
+                    <p>Une interface pensée pour la productivité et la clarté.</p>
+                </div>
+                <div class="grid">
+                    <!-- Card 1: Éditeur -->
+                    <div class="card">
+                        <div class="icon-box">✏️</div>
+                        <h3>Éditeur de Regex</h3>
+                        <p>Entrer vos expression régulière et tester-la immédiatement</p>
                     </div>
-                    
-                    <!-- Pour le pourcentage et test reussi -->
-                     <div class="div-pourcentage">
-                        <!-- <div > -->
-                            <p class="pourcentage">0%</p>
-                        <!-- </div> -->
-                        <!-- <div> -->
-                            <p class="resultat-test">0/0  </p>
-                        <!-- </div> -->
-                     </div>
-                     <p>précision des tag [KO] = test qui doit echouer,[OK] = test qui doit reussir</p>
-                     <p class="erreur"></p>
-                </div>
-              
-
-                
-            </div>
-
-            <div class="div-test">
-                <!-- titre + champs pour inserer les regex -->
-                <h2 class="titre-section">Expression reguliere (regex)</h2>
-                <input type="text" class="input-regex" id="" name="input-regex" value="">
-
-                <!-- Pour inserer les test -->
-                <div>
-                    <!-- pour le ttitre et les bouton de test  -->
-                    <div class="div-bibliotheque-test">
-                        <!-- <div> -->
-                            <h2 class="titre-section" >Données de test</h2>
-                        <!-- </div> -->
-                        <!-- <div> -->
-                            <button class="btn-tel-test">Tel</button>
-                            <button class="btn-email-test">Email</button>
-                        <!-- </div> -->
+                    <!-- Card 2: Systèmes de Test -->
+                    <div class="card">
+                        <div class="icon-box">🧪</div>
+                        <h3>Systèmes de Test</h3>
+                        <p>Créez des tests avec les tags [OK] et [KO] pour valider le comportement attendu de votre regex</p>
+                    </div>
+                    <!-- Card 3: score de précision -->
+                    <div class="card">
+                        <div class="icon-box">📊</div>
+                        <h3>Score de précision</h3>
+                        <p>Obtenez un score précis en pourcentage et le nombre de tests réussis (ex: 5/5 = 100%)</p>
+                    </div>
+                    <!-- Card 4 : Bibliothéque de regex  -->
+                     <div class="card">
+                        <div class="icon-box">📚</div>
+                        <h3>Bibliothéque de regex </h3>
+                        <p>Accédez à une collection de regex prêts à l'emploi (Email, Téléphone, etc.)</p>
+                    </div>
+                     <!-- Card 5 : Bibliothéque de test  -->
+                     <div class="card">
+                        <div class="icon-box">🧪</div>
+                        <h3>Bibliothéque de test </h3>
+                        <p>Consultez des jeux de tests pré-configurés pour chaque type de regex</p>
+                    </div>
+                    <!-- Card 6 - action pratique  -->
+                     <div class="card">
+                        <div class="icon-box">📋</div>
+                        <h3>Action pratique </h3>
+                        <p>Copiez votre regex ou effacez vos données avec un simple clic</p>
                     </div>
 
-                    <textarea name="test" id="test" class="test"  rows="20"  placeholder="[OK] test reussi 
-[KO] test echouer" value=""></textarea>
 
-                    <!-- pour les bouton de copier  -->
-                    <div class="div-btn">
-                        <!-- <div> -->
-                            <button class="btn-effacer">Effacer</button>
-                        <!-- </div> -->
-                        <!-- <div> -->
-                            <button class="btn-copier">copier</button>
-                        <!-- </div> -->
+                </div>
+            </div>
+        </section>
 
-                    </div>
+          <!-- sSYSTEME DE TAG -->
+        <section id="tag-system" class="section-padding tag-system">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Le Système de Tags</h2>
+                    <p>Contrôlez vos tests avec une syntaxe simple et intuitive.</p>
                 </div>
                 
-            </div>
+                <div class="tag-container">
+                    <!-- Tag OK -->
+                    <div class="tag-box" style="border-top: 4px solid var(--accent-green);">
+                        <span class="tag-badge-lg bg-ok">[OK]</span>
+                        <h3>Succès attendu</h3>
+                        <p style="color: var(--text-muted);">
+                            Utilisez <strong>[OK]</strong> pour indiquer qu'un test <strong>doit correspondre </strong> à votre regex. Si le test passe (la regex matche le texte), c'est un succès ✓
+                            <br><br>
+                            <em>Exemple : <code>contact@test.fr [OK]</code></em>
+                        </p>
+                    </div>
 
-         </div>
-        
+                    <!-- Tag KO -->
+                    <div class="tag-box" style="border-top: 4px solid var(--accent-red);">
+                        <span class="tag-badge-lg bg-ko">[KO]</span>
+                        <h3> Échec attendu</h3>
+                        <p style="color: var(--text-muted);">
+                            Utilisez <strong>[KO</strong>] pour indiquer qu'un test <strong>ne doit pas correspondre</strong> à votre regex. Si le test échoue (la regex ne matche pas le texte), c'est un succès ✓
+                            <br><br>
+                            <em>Exemple : <code>invalide-mail [KO]</code></em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- COMMENT CA MARCHE -->
+        <section id="how-it-works" class="section-padding how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Comment utiliser validatorRegex ?</h2>
+                    <p>Un guide simple en 5 étapes</p>
+                </div>
+                
+                <div class="grid-steps">
+                    <div class="step-card">
+                        <div class="step-badge">1</div>
+                        <h3>Entrer un Regex</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Tapez votre expression régulière dans le champ d'entrée ou choisissez un modèle de la bibliothèque (Email, Téléphone, etc.)</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">2</div>
+                        <h3>Créer des tests</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Écrivez vos tests dans la zone de test. Utilisez le format : [TAG] votre_texte_de_test</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">3</div>
+                        <h3>Ajouter les tags</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Marquez chaque test avec <strong>[OK] </strong>si vous attendez une correspondance, <strong>[KO] </strong> si vous attendez un échec.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">4</div>
+                        <h3>Lancer la validation</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Exécutez les tests et regardez l'application vérifier si votre regex fonctionne comme prévu</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">5</div>
+                        <h3>Consulter le score</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Visualisez votre score de précision en pourcentage et le nombre de tests réussis (ex: 5/5 = 100%).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-
-    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
